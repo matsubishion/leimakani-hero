@@ -15,8 +15,8 @@
 <script>
 (function(){
   var v=document.getElementById('v');
-  var small=Math.max(screen.width,screen.height)*(window.devicePixelRatio||1)<=1440;
-  v.src=small?'hero_720.mp4':'hero_1080.mp4';
+  var small=window.innerWidth<=640;
+  v.src=small?'hero_540.mp4':'hero_720.mp4';
   v.muted=true;
   function go(){var p=v.play();if(p&&p.catch)p.catch(function(){});}
   go();
